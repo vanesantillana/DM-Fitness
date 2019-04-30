@@ -72,20 +72,20 @@ public class SentadillasActivity extends AppCompatActivity {
                 float x = event.values[0];
                 float y = event.values[1];
                 float z = event.values[2];
-                allsensor2.setText("X: "+x+" \n\n "+"Y: "+y+" \n\n "+"Z:"+z);
-                /*if(x<-8 && y<1 && pila.get(pila.size()-1)==false){
-                    int rep = Integer.parseInt(contador.getText().toString()) + 1;
-                    contador.setText(""+rep);
+                //allsensor2.setText("X: "+y+" \n\n "+"Z:"+z);
+                if(y<-150 && pila.get(pila.size()-1)==false){
+                    int rep = Integer.parseInt(contador2.getText().toString()) + 1;
+                    contador2.setText(""+rep);
                     if(random.nextBoolean())
-                        bien.start();
+                        animo.start();
                     else
                         perfecto.start();
                     pila.clear();
                     pila.add(true);
                 }
-                else if(x<1 && y>9){
+                else if(y>80){
                     pila.add(false);
-                }*/
+                }
             }
 
         }
