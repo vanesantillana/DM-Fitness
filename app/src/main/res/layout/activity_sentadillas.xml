@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ejercicioActivity">
+    tools:context=".SentadillasActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,11 +14,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <pl.droidsonroids.gif.GifImageView
                 android:layout_width="wrap_content"
-                android:layout_height="250dp"
+                android:layout_height="300dp"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/seriespunetazos"
+                android:src="@drawable/sentadillasgif"
                 />
             <!--
             <ImageView
@@ -29,34 +30,34 @@
                 android:layout_marginTop="10dp"/>-->
 
             <TextView
-                android:id="@+id/titulo"
+                android:id="@+id/titulo2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/ejer1"
+                android:text="@string/ejer2"
                 style="@style/tituloejer"/>
 
             <TextView
-                android:id="@+id/descripcion"
+                android:id="@+id/descripcion2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/descrip1"
+                android:text="@string/descrip2"
                 style="@style/descripejer"/>
             <TextView
-                android:id="@+id/allsensor"
+                android:id="@+id/allsensor2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="1dp"
+                android:textSize="15dp"
                 style="@style/descripejer"/>
 
             <TextView
-                android:id="@+id/cont"
+                android:id="@+id/cont2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="0"
                 style="@style/contador"/>
 
             <Button
-                android:id="@+id/reinicio"
+                android:id="@+id/reinicio2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Reiniciar"

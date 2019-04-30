@@ -8,11 +8,13 @@ import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class ejercicioActivity extends AppCompatActivity {
@@ -21,10 +23,13 @@ public class ejercicioActivity extends AppCompatActivity {
     Button reiniciar;
     public MediaPlayer bien, perfecto, animo;
     Random random = new Random();
+    ArrayList<Boolean> pila = new ArrayList<Boolean>();
+    Boolean punios = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ejercicio);
+        punios = true;
 
         allsensor = (TextView) findViewById(R.id.allsensor);
         contador = (TextView) findViewById(R.id.cont);
@@ -66,31 +71,36 @@ public class ejercicioActivity extends AppCompatActivity {
 
         @Override
         public void onSensorChanged(SensorEvent event) {
-            if(event.sensor.getType() == Sensor.TYPE_ACCELEROMETER){
+            if(event.sensor.getType() == Sensor.TYPE_ACCELEROMETER && punios==true){
                 float x = event.values[0];
                 float y = event.values[1];
-                allsensor.setText("X: "+x+" \n\n "+"Y:"+y);
-                if(x<-9 && y<1){
+                //allsensor.setText("X: "+x+" \n\n "+"Y:"+y);
+                if(x<-8 && y<1 && pila.get(pila.size()-1)==false){
                     int rep = Integer.parseInt(contador.getText().toString()) + 1;
                     contador.setText(""+rep);
-                    int audio = random.nextInt()%3 +1;
-                    if(audio == 0)
+                    if(random.nextBoolean())
                         bien.start();
-                    else if(audio == 1)
-                        animo.start();
-                    else if(audio == 2)
+                    else
                         perfecto.start();
-                    //esperar(3);
+                    pila.clear();
+                    pila.add(true);
+                }
+                else if(x<1 && y>9){
+                    pila.add(false);
                 }
             }
 
         }
 
     };
-    public void esperar (int segundos) {
-        try {
-            Thread.sleep (segundos*1000);
-        } catch (Exception e) {
-        }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        punios = false;
+        bien.reset();
+        perfecto.reset();
+        this.finish();
     }
+
 }
