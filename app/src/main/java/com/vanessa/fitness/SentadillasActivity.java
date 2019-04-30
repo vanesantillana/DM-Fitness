@@ -19,7 +19,7 @@ public class SentadillasActivity extends AppCompatActivity {
     SensorManager mySensorManager2;
     TextView allsensor2,contador2;
     Button reiniciar2;
-    public MediaPlayer bien, perfecto, animo;
+    public MediaPlayer perfecto, animo,titulo;
     Random random = new Random();
     ArrayList<Boolean> pila = new ArrayList<Boolean>();
 
@@ -27,15 +27,17 @@ public class SentadillasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sentadillas);
+        pila.add(true);
 
         allsensor2 = (TextView) findViewById(R.id.allsensor2);
         contador2 = (TextView) findViewById(R.id.cont2);
         reiniciar2 = (Button) findViewById(R.id.reinicio2);
         // AUDIOS
 
-        bien = MediaPlayer.create(SentadillasActivity.this, R.raw.bien);
         perfecto = MediaPlayer.create(SentadillasActivity.this, R.raw.perfecto);
         animo = MediaPlayer.create(SentadillasActivity.this, R.raw.animo);
+        titulo = MediaPlayer.create(SentadillasActivity.this, R.raw.sentadillas);
+        titulo.start();
         //SENSOR
         mySensorManager2 = (SensorManager)getSystemService(SENSOR_SERVICE);
 
@@ -91,4 +93,13 @@ public class SentadillasActivity extends AppCompatActivity {
         }
 
     };
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        animo.reset();
+        perfecto.reset();
+        titulo.reset();
+        this.finish();
+    }
 }

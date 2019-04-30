@@ -4,6 +4,7 @@
     <string name="ejer2">SENTADILLAS</string>
     <string name="ejer3">TONIFICA BRAZOS</string>
 
-    <string name="descrip1">Agarra el movil en una mano con la pantalla contra tu pecho y haz el movimiento girando el móvil en 180°</string>
-    <string name="descrip2">Estira tus brazos delante tuyo y coloca el celular boca abajo. Sube y baja con el ejercicio.</string>
+    <string name="descrip1">Agarra el móvil con la mano derecha con la pantalla contra tu pecho y haz el movimiento girando en horizontal</string>
+    <string name="descrip2">Agarra con la mano derecha el móvil y pegalo a tu pierna, sube los brazos con el movil boca abajo para hacer el ejercicio.</string>
+    <string name="descrip3">Agarra el móvil con la mano derecha y pegalo a tu pierna y elevala hasta llegar al pecho.</string>
 </resources>

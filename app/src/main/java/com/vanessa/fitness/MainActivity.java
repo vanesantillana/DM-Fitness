@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
-    LinearLayout menu1,menu2;
+    LinearLayout menu1,menu2,menu3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
         menu1 = (LinearLayout )findViewById(R.id.menu1);
         menu2 = (LinearLayout )findViewById(R.id.menu2);
+        menu3 = (LinearLayout )findViewById(R.id.menu3);
 
         menu1.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -28,6 +29,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,SentadillasActivity.class);
+                startActivity(intent);
+            }
+        });
+        menu3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,BrazosActivity.class);
                 startActivity(intent);
             }
         });
